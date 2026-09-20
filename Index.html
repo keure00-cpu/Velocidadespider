@@ -2,9 +2,9 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Velocity Spider — HQ 300 Páginas</title>
+<title>Velocity Spider — HQ Digital</title>
 
 <style>
 
@@ -13,19 +13,14 @@
 }
 
 :root{
-    --bg:#020611;
-    --panel:#061426;
-    --panel2:#091b31;
-    --line:#173b62;
-    --blue:#079cff;
+    --bg:#020711;
+    --panel:#061323;
+    --panel2:#081a2d;
+    --line:#173b60;
+    --blue:#078fff;
     --cyan:#20ddff;
-    --red:#ff315d;
     --text:#edf8ff;
-    --muted:#8ca8bd;
-}
-
-html{
-    scroll-behavior:smooth;
+    --muted:#8ba6ba;
 }
 
 body{
@@ -33,148 +28,225 @@ body{
     background:
         radial-gradient(
             circle at 50% -20%,
-            #0c3760 0,
-            #020611 45%,
+            #10385e 0,
+            #020711 45%,
             #01030a 100%
         );
     color:var(--text);
     font-family:Arial,Helvetica,sans-serif;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header{
-    height:145px;
+    height:165px;
     position:relative;
     overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:20px 35px;
     border-bottom:1px solid var(--line);
-    background:#061226;
+    background:#030b18;
 }
 
 .header-image{
     position:absolute;
     right:0;
     top:0;
-    width:55%;
-    height:145px;
-    opacity:.38;
+    width:65%;
+    height:165px;
 }
 
 .header-image img{
     width:100%;
     height:100%;
     object-fit:cover;
+    opacity:.55;
 }
 
 header::after{
     content:"";
     position:absolute;
     inset:0;
+
     background:
         linear-gradient(
             90deg,
-            #061226 15%,
-            rgba(6,18,38,.92) 38%,
-            rgba(6,18,38,.2) 100%
+            #020813 5%,
+            rgba(2,8,19,.94) 28%,
+            rgba(2,8,19,.35) 70%,
+            rgba(2,8,19,.1)
         );
-    pointer-events:none;
 }
 
+
+/* LOGO */
+
 .logo{
-    position:relative;
-    z-index:3;
+    position:absolute;
+    z-index:5;
+    left:30px;
+    top:20px;
 }
 
 .logo h1{
     margin:0;
-    font-size:35px;
+    font-size:38px;
     letter-spacing:2px;
 }
 
 .logo p{
-    margin:7px 0 0;
+    margin:8px 0;
     color:var(--cyan);
     font-size:11px;
-    letter-spacing:5px;
+    letter-spacing:6px;
 }
 
+
+/* TEXTO DO CAPÍTULO */
+
+.header-chapter{
+    position:absolute;
+    z-index:5;
+    right:35px;
+    top:35px;
+    width:230px;
+}
+
+.header-chapter h2{
+    margin:0;
+    font-size:19px;
+}
+
+.header-chapter p{
+    color:#d5e4ef;
+    font-size:12px;
+    line-height:1.5;
+}
+
+
+/* MENU */
+
 nav{
-    position:relative;
-    z-index:3;
+    position:absolute;
+    z-index:6;
+    bottom:0;
+    left:330px;
+
     display:flex;
-    gap:20px;
+    gap:27px;
 }
 
 nav a{
-    color:#dcecff;
+    color:#d8e8f4;
     text-decoration:none;
-    font-size:12px;
+
+    font-size:11px;
     font-weight:bold;
+
+    padding:14px 5px;
 }
 
-nav a:hover{
+nav a:hover,
+nav a.active{
     color:var(--cyan);
+    border-bottom:3px solid var(--cyan);
 }
 
-/* LAYOUT */
+
+/* =========================
+   LAYOUT
+========================= */
 
 .layout{
     display:grid;
-    grid-template-columns:245px minmax(0,1fr) 260px;
-    gap:16px;
-    padding:16px;
+
+    grid-template-columns:
+        245px
+        minmax(0,1fr)
+        255px;
+
+    gap:15px;
+
+    padding:15px;
 }
 
-/* PANELS */
+
+/* =========================
+   PAINÉIS
+========================= */
 
 .panel{
     background:
         linear-gradient(
             145deg,
-            rgba(9,28,49,.97),
-            rgba(3,11,23,.97)
+            rgba(7,25,44,.98),
+            rgba(2,10,20,.98)
         );
+
     border:1px solid var(--line);
-    border-radius:13px;
+
+    border-radius:10px;
+
     box-shadow:
-        0 20px 50px rgba(0,0,0,.3);
+        0 15px 45px rgba(0,0,0,.35);
 }
 
-/* CHAPTERS */
+
+/* =========================
+   ESQUERDA
+========================= */
 
 .sidebar{
-    padding:14px;
-    max-height:calc(100vh - 180px);
+    padding:13px;
+
+    max-height:
+        calc(100vh - 190px);
+
     overflow:auto;
+
     position:sticky;
-    top:15px;
+    top:10px;
 }
 
 .sidebar-title{
     font-size:13px;
     font-weight:bold;
+
     margin-bottom:13px;
-    color:#fff;
 }
 
 .chapter{
-    padding:10px;
-    margin:6px 0;
-    border-radius:8px;
+    display:flex;
+
+    gap:9px;
+
+    padding:8px;
+
+    margin:5px 0;
+
+    border-radius:7px;
+
     cursor:pointer;
-    color:#a9bfd0;
-    font-size:12px;
+
+    color:#afc4d4;
+
+    font-size:11px;
+
     border:1px solid transparent;
-    transition:.2s;
+}
+
+.chapter img{
+    width:45px;
+    height:52px;
+
+    object-fit:cover;
+
+    border-radius:5px;
 }
 
 .chapter:hover{
-    background:#0a2b4b;
-    color:#fff;
+    background:#082d4e;
 }
 
 .chapter.active{
@@ -182,284 +254,474 @@ nav a:hover{
         linear-gradient(
             90deg,
             #087ddd,
-            #06467f
+            #06467e
         );
-    color:#fff;
+
+    color:white;
+
     border-color:#159cff;
 }
 
-/* READER */
+
+/* =========================
+   LEITOR
+========================= */
 
 .reader{
-    padding:15px;
+    padding:13px;
 }
 
 .reader-top{
+    height:42px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:10px;
-    padding:5px 0 14px;
 }
 
-.page-counter{
-    font-weight:bold;
-    font-size:14px;
-    color:#dff5ff;
-}
+.reader-top button,
+.controls button{
 
-.reader-button{
-    border:1px solid #24618f;
-    background:#0a3158;
-    color:#fff;
+    background:#082c4e;
+
+    color:white;
+
+    border:1px solid #28628e;
+
     border-radius:7px;
-    padding:9px 13px;
+
+    padding:8px 12px;
+
     cursor:pointer;
 }
 
-.reader-button:hover{
+.reader-top button:hover,
+.controls button:hover{
+
     background:#087ddd;
 }
 
-/* HQ */
 
-.comic-container{
+/* =========================
+   HQ
+========================= */
+
+.comic{
     background:#000;
-    border:1px solid #20517a;
-    border-radius:9px;
+
+    border:
+        1px solid #205276;
+
+    border-radius:7px;
+
     overflow:hidden;
-    box-shadow:
-        0 0 45px rgba(0,150,255,.08);
 }
 
-.comic-page{
+.comic img{
+
     display:block;
+
     width:100%;
-    max-height:76vh;
+
+    max-height:78vh;
+
     object-fit:contain;
+
     background:#000;
 }
 
-.comic-caption{
-    padding:18px;
+
+/* TEXTO DA HQ */
+
+.caption{
+
+    padding:15px;
+
     background:
         linear-gradient(
             180deg,
-            #081a2f,
-            #030914
+            #081b2f,
+            #030913
         );
-    border-top:1px solid #173b62;
-    line-height:1.6;
-}
 
-.comic-caption .chapter-name{
-    color:var(--cyan);
-    font-weight:bold;
+    border-top:
+        1px solid #173c5d;
+
     font-size:13px;
-    letter-spacing:1px;
-}
 
-.comic-caption .story{
-    color:#c6d7e4;
-    margin-top:6px;
-}
-
-/* CONTROLS */
-
-.controls{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:14px 0 5px;
-}
-
-.controls input{
-    width:55%;
-    accent-color:var(--cyan);
-}
-
-/* RIGHT PANEL */
-
-.right{
-    padding:14px;
-}
-
-.cover{
-    width:100%;
-    border-radius:8px;
-    border:1px solid #245174;
-}
-
-.info-title{
-    font-size:17px;
-    margin:12px 0 5px;
-}
-
-.info-text{
-    color:var(--muted);
-    font-size:13px;
     line-height:1.5;
 }
 
-.progress-container{
-    margin-top:15px;
+.caption strong{
+
+    color:var(--cyan);
+
+    font-size:12px;
+
+    letter-spacing:.5px;
 }
 
-.progress-label{
+
+/* =========================
+   CONTROLES
+========================= */
+
+.controls{
+
     display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px 0 4px;
+}
+
+.controls input{
+
+    width:50%;
+
+    accent-color:var(--cyan);
+}
+
+
+/* =========================
+   DIREITA
+========================= */
+
+.right{
+    padding:13px;
+}
+
+.cover{
+
+    width:100%;
+
+    height:205px;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    border-radius:7px;
+
+    border:1px solid #214d70;
+}
+
+.right h2{
+
+    margin:
+        12px 0 4px;
+
+    font-size:18px;
+}
+
+.right p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.5;
+}
+
+
+/* PROGRESSO */
+
+.progress-label{
+
+    display:flex;
+
     justify-content:space-between;
+
+    color:#8faabd;
+
     font-size:11px;
-    color:#91a9bb;
+
+    margin-top:15px;
+
     margin-bottom:6px;
 }
 
 .progress-bar{
+
     height:7px;
-    background:#13283e;
+
+    background:#152a3f;
+
     border-radius:10px;
+
     overflow:hidden;
 }
 
 .progress{
+
     height:100%;
+
     width:0%;
+
     background:
         linear-gradient(
             90deg,
-            #087ddd,
+            #078fff,
             #20ddff
         );
-    transition:.3s;
+
+    transition:.25s;
 }
 
-/* PAGE GRID */
 
-.page-grid-title{
+/* =========================
+   PÁGINAS
+========================= */
+
+.pages-title{
+
     margin-top:18px;
+
+    color:var(--cyan);
+
     font-size:12px;
+
     font-weight:bold;
 }
 
-.page-grid{
+.pages{
+
     display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:5px;
-    margin-top:10px;
-    max-height:310px;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:6px;
+
+    margin-top:9px;
+
+    max-height:320px;
+
     overflow:auto;
-    padding-right:3px;
 }
 
-.page-number{
-    background:#0b2138;
-    color:#bcd0df;
-    border:1px solid #173e63;
+.page{
+
+    background:#092139;
+
+    color:#c5d8e6;
+
+    border:
+        1px solid #183e60;
+
     border-radius:5px;
-    padding:7px 2px;
+
+    padding:8px 2px;
+
     font-size:10px;
+
     cursor:pointer;
 }
 
-.page-number:hover{
-    background:#0b4f84;
-    color:#fff;
+.page:hover{
+
+    background:#0a4c7d;
 }
 
-.page-number.active{
+.page.active{
+
     background:#087ddd;
-    border-color:#20ddff;
-    color:#fff;
-}
 
-/* SEARCH */
+    color:white;
 
-.search{
-    width:100%;
-    padding:10px;
-    border-radius:7px;
-    border:1px solid #204568;
-    background:#020b17;
-    color:#fff;
-    outline:none;
-    margin-bottom:10px;
-}
-
-.search:focus{
     border-color:var(--cyan);
 }
 
-/* FOOTER */
 
-footer{
-    text-align:center;
-    padding:30px;
-    color:#718ca1;
-    font-size:12px;
+/* =========================
+   LEGENDA
+========================= */
+
+.legend{
+
+    margin-top:15px;
+
+    padding-top:13px;
+
+    border-top:
+        1px solid #173b5c;
+
+    color:#9bb2c4;
+
+    font-size:11px;
+
+    line-height:2;
 }
 
-/* MOBILE */
+.legend-title{
+
+    color:var(--cyan);
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   MINIATURAS
+========================= */
+
+.bottom-pages{
+
+    margin-top:15px;
+
+    padding:12px;
+
+    display:flex;
+
+    gap:8px;
+
+    overflow:auto;
+
+    border:
+        1px solid #173b5e;
+
+    border-radius:9px;
+
+    background:#040d19;
+}
+
+.thumb{
+
+    min-width:75px;
+
+    height:95px;
+
+    object-fit:cover;
+
+    border:
+        2px solid #173b5e;
+
+    border-radius:5px;
+
+    cursor:pointer;
+}
+
+.thumb.active{
+
+    border-color:
+        var(--cyan);
+
+    box-shadow:
+        0 0 15px
+        rgba(32,221,255,.35);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    color:#6d899e;
+
+    padding:28px;
+
+    font-size:11px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
 
 @media(max-width:1100px){
 
     .layout{
-        grid-template-columns:200px minmax(0,1fr);
+
+        grid-template-columns:
+            190px
+            1fr;
     }
 
     .right{
+
         display:none;
+    }
+
+    nav{
+
+        left:230px;
     }
 
 }
 
-@media(max-width:720px){
+
+@media(max-width:700px){
 
     header{
-        height:105px;
-        padding:15px;
+
+        height:120px;
+    }
+
+    .logo{
+
+        left:15px;
+        top:15px;
     }
 
     .logo h1{
-        font-size:23px;
+
+        font-size:24px;
     }
 
     .logo p{
+
         font-size:8px;
+
         letter-spacing:3px;
     }
 
     nav{
+
         display:none;
     }
 
-    .header-image{
-        height:105px;
-        width:70%;
+    .header-chapter{
+
+        display:none;
     }
 
     .layout{
+
         display:block;
+
         padding:7px;
     }
 
     .sidebar{
+
         display:none;
     }
 
     .reader{
+
         padding:7px;
     }
 
-    .reader-top{
-        flex-wrap:wrap;
-    }
+    .comic img{
 
-    .comic-page{
         max-height:none;
     }
 
-    .controls input{
-        width:45%;
+    .bottom-pages{
+
+        display:flex;
     }
 
 }
@@ -467,15 +729,26 @@ footer{
 </style>
 </head>
 
+
 <body>
 
+
+<!-- ==================================================
+     HEADER
+================================================== -->
 
 <header>
 
     <div class="header-image">
 
+        <!--
+        Coloque a imagem da referência aqui:
+        assets/referencia.png
+
+        -->
+
         <img
-            src="assets/velocity-spider-reference.png"
+            src="assets/referencia.png"
             alt="Velocity Spider"
         >
 
@@ -495,21 +768,37 @@ footer{
     </div>
 
 
+    <div class="header-chapter">
+
+        <h2>
+            CAPÍTULO 01<br>
+            O DESPERTAR
+        </h2>
+
+        <p>
+            Tudo começou com um acidente...
+            mas o que parecia o fim,
+            foi apenas o começo.
+        </p>
+
+    </div>
+
+
     <nav>
 
         <a href="#">
             INÍCIO
         </a>
 
-        <a href="#hq">
+        <a href="#hq" class="active">
             HQ
         </a>
 
-        <a href="#personagem">
+        <a href="#">
             PERSONAGEM
         </a>
 
-        <a href="#poderes">
+        <a href="#">
             PODERES
         </a>
 
@@ -517,15 +806,26 @@ footer{
             CAPÍTULOS
         </a>
 
+        <a href="#">
+            SOBRE
+        </a>
+
     </nav>
 
 </header>
 
 
+
+<!-- ==================================================
+     PRINCIPAL
+================================================== -->
+
 <main class="layout">
 
 
-    <!-- CAPÍTULOS -->
+    <!-- ==============================================
+         CAPÍTULOS
+    =============================================== -->
 
     <aside
         class="panel sidebar"
@@ -533,101 +833,105 @@ footer{
     >
 
         <div class="sidebar-title">
-            VELOCITY SPIDER
+            CAPÍTULOS
         </div>
 
-        <input
-            class="search"
-            id="chapterSearch"
-            type="text"
-            placeholder="Pesquisar capítulo..."
-        >
 
-        <div id="chapters"></div>
+        <div id="chapterList"></div>
+
 
     </aside>
 
 
-    <!-- LEITOR -->
+
+    <!-- ==============================================
+         LEITOR
+    =============================================== -->
 
     <section
         class="panel reader"
         id="hq"
     >
 
+
         <div class="reader-top">
 
-            <button
-                class="reader-button"
-                id="previousButton"
-            >
-                ‹ ANTERIOR
+
+            <button id="previous">
+
+                ‹ Página anterior
+
             </button>
 
 
-            <div
-                class="page-counter"
-                id="pageCounter"
-            >
-                Página 1 / 300
-            </div>
+            <strong id="counter">
+
+                Página 1 de 300
+
+            </strong>
 
 
-            <button
-                class="reader-button"
-                id="nextButton"
-            >
-                PRÓXIMA ›
+            <button id="next">
+
+                Próxima página ›
+
             </button>
+
 
         </div>
 
 
-        <div class="comic-container">
+
+        <div class="comic">
+
 
             <img
-                id="comicPage"
-                class="comic-page"
-                src="assets/hq/page-001.jpg"
-                alt="Página da HQ Velocity Spider"
+                id="comicImage"
+                src="assets/referencia.png"
+                alt="HQ Velocity Spider"
             >
 
 
-            <div class="comic-caption">
+            <div class="caption">
 
-                <div
-                    class="chapter-name"
-                    id="chapterName"
-                >
-                    CAPÍTULO 01 — O DESPERTAR
-                </div>
+                <strong id="chapterTitle">
 
-                <div
-                    class="story"
-                    id="storyText"
-                >
-                    Kai descobre que sua velocidade ultrapassa
-                    qualquer limite conhecido. Mas uma ameaça
-                    misteriosa começa a surgir nas sombras da cidade.
-                </div>
+                    CAPÍTULO 01 —
+                    O DESPERTAR
+
+                </strong>
+
+
+                <br>
+
+
+                <span id="story">
+
+                    Tudo começou com um acidente...
+                    mas o que parecia o fim,
+                    foi apenas o começo.
+
+                </span>
 
             </div>
 
+
         </div>
+
 
 
         <div class="controls">
 
-            <button
-                class="reader-button"
-                id="firstButton"
-            >
+
+            <button id="first">
+
                 «
+
             </button>
 
 
             <input
-                id="pageSlider"
+                id="slider"
                 type="range"
                 min="1"
                 max="300"
@@ -635,81 +939,135 @@ footer{
             >
 
 
-            <button
-                class="reader-button"
-                id="lastButton"
-            >
+            <button id="last">
+
                 »
+
             </button>
 
+
         </div>
+
+
+
+        <!-- MINIATURAS -->
+
+        <div
+            class="bottom-pages"
+            id="thumbnails"
+        ></div>
+
 
     </section>
 
 
-    <!-- PAINEL DIREITO -->
+
+    <!-- ==============================================
+         DIREITA
+    =============================================== -->
 
     <aside class="panel right">
 
+
         <img
             class="cover"
-            src="assets/velocity-spider-reference.png"
+            src="assets/referencia.png"
             alt="Velocity Spider"
         >
 
 
-        <h2 class="info-title">
-            Velocity Spider
+        <h2 id="rightChapter">
+
+            CAPÍTULO 01
+
         </h2>
 
 
-        <p class="info-text">
-            A saga completa do herói que domina
-            velocidade, agilidade, reflexos e
-            poderes de aranha.
+        <p id="rightTitle">
+
+            O Despertar
+
         </p>
 
 
-        <div class="progress-container">
+        <div class="progress-label">
 
-            <div class="progress-label">
+            <span>
+                PROGRESSO
+            </span>
 
-                <span>
-                    PROGRESSO
-                </span>
-
-                <span id="progressText">
-                    0%
-                </span>
-
-            </div>
-
-
-            <div class="progress-bar">
-
-                <div
-                    class="progress"
-                    id="progress"
-                ></div>
-
-            </div>
+            <span id="percent">
+                0%
+            </span>
 
         </div>
 
 
-        <div class="page-grid-title">
+        <div class="progress-bar">
+
+            <div
+                class="progress"
+                id="progress"
+            ></div>
+
+        </div>
+
+
+        <p>
+            10 páginas neste capítulo
+        </p>
+
+
+        <button
+            style="width:100%;margin:5px 0 15px"
+            id="nextChapter"
+        >
+
+            Ler próximo capítulo →
+
+        </button>
+
+
+        <div class="pages-title">
+
             PÁGINAS DA HQ
+
         </div>
 
 
         <div
-            class="page-grid"
-            id="pageGrid"
+            class="pages"
+            id="pageButtons"
         ></div>
+
+
+
+        <div class="legend">
+
+            <div class="legend-title">
+                LEGENDA
+            </div>
+
+            ⚪ Fala do personagem<br>
+
+            ▣ Narrador<br>
+
+            ☁ Pensamento<br>
+
+            〰 Ação / Movimento<br>
+
+            ☾ Cena noturna<br>
+
+            ☀ Cena de dia
+
+        </div>
+
 
     </aside>
 
+
 </main>
+
 
 
 <footer>
@@ -718,38 +1076,37 @@ footer{
 
     <br><br>
 
-    300 páginas • 30 capítulos • Saga completa
+    300 páginas • 30 capítulos
 
 </footer>
 
 
+
 <script>
 
-/* =====================================================
+
+/* ==================================================
    CONFIGURAÇÃO
-===================================================== */
+================================================== */
+
 
 const TOTAL_PAGES = 300;
 
 const PAGES_PER_CHAPTER = 10;
 
 
-/*
-    Os capítulos da saga.
-*/
-
 const chapters = [
 
     "O Despertar",
-    "A Cidade Parou",
-    "O Homem Azul",
-    "Caçada Noturna",
-    "A Ponte de Vidro",
-    "Nova",
-    "O Laboratório Subterrâneo",
-    "O Código Vermelho",
-    "Velocidade Zero",
-    "A Corrida Impossível",
+    "A Cidade em Choque",
+    "O Novo Inimigo",
+    "A Conspiração",
+    "O Laboratório Secreto",
+    "A Caçada",
+    "O Herói em Dúvida",
+    "A Fúria de Maximus",
+    "O Mundo Descobre",
+    "A Grande Batalha",
 
     "O Exército de Vorax",
     "A Cidade Invertida",
@@ -776,198 +1133,170 @@ const chapters = [
 ];
 
 
-/* =====================================================
-   TEXTOS
-===================================================== */
-
-const storyTexts = [
-
-    "Kai descobre seus poderes e percebe que sua velocidade não possui um limite conhecido.",
-
-    "Relógios congelam por toda a cidade. Kai é o único capaz de se mover normalmente.",
-
-    "Um misterioso velocista surge e desafia Kai para uma corrida impossível.",
-
-    "Vorax começa a perseguir a energia responsável pelos poderes do Velocity Spider.",
-
-    "Centenas de pessoas ficam presas durante o colapso de uma enorme ponte.",
-
-    "Nova invade os sistemas da Velocity Labs e encontra informações sobre Kai.",
-
-    "Kai retorna ao laboratório onde seus poderes começaram.",
-
-    "Um protocolo de emergência transforma a cidade inteira em uma zona de risco.",
-
-    "Kai percebe que perder o controle da velocidade pode ser mais perigoso que qualquer vilão.",
-
-    "Uma corrida atravessa a cidade em poucos minutos.",
-
-    "Drones experimentais começam a caçar o Velocity Spider.",
-
-    "Uma anomalia faz ruas e prédios mudarem de posição.",
-
-    "Uma cópia instável de Kai aparece na cidade.",
-
-    "Kai precisa salvar um trem suspenso no ar.",
-
-    "A verdadeira origem da energia do traje é revelada.",
-
-    "Uma arma misteriosa apaga todos os sinais eletrônicos da cidade.",
-
-    "Nova fica presa e Kai precisa escolher entre duas missões.",
-
-    "A energia abre um portal para uma dimensão desconhecida.",
-
-    "Kai encontra uma versão abandonada de sua própria cidade.",
-
-    "Um novo adversário afirma ser o verdadeiro dono da velocidade.",
-
-    "Uma tempestade de energia cinética toma conta das ruas.",
-
-    "Vorax começa seu experimento definitivo.",
-
-    "Kai, Nova e novos aliados formam uma equipe.",
-
-    "Diferentes velocistas entram em guerra.",
-
-    "Passado e presente começam a acontecer ao mesmo tempo.",
-
-    "Kai precisa fazer uma escolha que pode mudar toda a cidade.",
-
-    "A cidade começa a reconstrução depois da grande batalha.",
-
-    "Kai começa a treinar uma nova geração de heróis.",
-
-    "Uma mensagem impossível revela que Vorax ainda está vivo.",
-
-    "A saga chega ao confronto final além dos limites da velocidade."
-
-];
-
-
-/* =====================================================
-   ESTADO
-===================================================== */
-
 let currentPage = 1;
 
 
-/* =====================================================
+
+/* ==================================================
    ELEMENTOS
-===================================================== */
+================================================== */
 
-const comicPage =
-    document.getElementById("comicPage");
 
-const pageCounter =
-    document.getElementById("pageCounter");
+const comicImage =
+    document.getElementById(
+        "comicImage"
+    );
 
-const pageSlider =
-    document.getElementById("pageSlider");
+const counter =
+    document.getElementById(
+        "counter"
+    );
 
-const pageGrid =
-    document.getElementById("pageGrid");
+const slider =
+    document.getElementById(
+        "slider"
+    );
 
-const chaptersContainer =
-    document.getElementById("chapters");
+const chapterTitle =
+    document.getElementById(
+        "chapterTitle"
+    );
 
-const chapterName =
-    document.getElementById("chapterName");
-
-const storyText =
-    document.getElementById("storyText");
+const story =
+    document.getElementById(
+        "story"
+    );
 
 const progress =
-    document.getElementById("progress");
+    document.getElementById(
+        "progress"
+    );
 
-const progressText =
-    document.getElementById("progressText");
+const percent =
+    document.getElementById(
+        "percent"
+    );
 
 
-/* =====================================================
-   CAPÍTULO DE UMA PÁGINA
-===================================================== */
 
-function getChapterNumber(page){
+/* ==================================================
+   IMAGEM
+================================================== */
+
+
+function getPageImage(page){
+
+    const number =
+        String(page).padStart(
+            3,
+            "0"
+        );
+
+    return:
+
+        `assets/hq/page-${number}.jpg`;
+
+}
+
+
+/* ==================================================
+   CAPÍTULO
+================================================== */
+
+
+function getChapter(){
 
     return Math.floor(
-        (page - 1) / PAGES_PER_CHAPTER
+        (currentPage - 1)
+        / PAGES_PER_CHAPTER
     );
 
 }
 
 
-/* =====================================================
-   IMAGEM DA PÁGINA
-===================================================== */
-
-function getPageImage(page){
-
-    const number =
-        String(page).padStart(3,"0");
-
-    return `assets/hq/page-${number}.jpg`;
-
-}
+/* ==================================================
+   ATUALIZAR
+================================================== */
 
 
-/* =====================================================
-   ATUALIZAR LEITOR
-===================================================== */
+function render(){
 
-function renderPage(){
-
-    const chapterIndex =
-        getChapterNumber(currentPage);
+    const chapter =
+        getChapter();
 
 
-    const chapterPage =
-        ((currentPage - 1) % PAGES_PER_CHAPTER) + 1;
+    counter.textContent =
+
+        `Página ${currentPage} de ${TOTAL_PAGES}`;
 
 
-    pageCounter.textContent =
-        `Página ${currentPage} / ${TOTAL_PAGES}`;
-
-
-    pageSlider.value =
+    slider.value =
         currentPage;
 
 
-    chapterName.textContent =
-        `CAPÍTULO ${String(chapterIndex + 1).padStart(2,"0")} — ${chapters[chapterIndex]}`;
+    chapterTitle.textContent =
+
+        `CAPÍTULO ${String(
+            chapter + 1
+        ).padStart(2,"0")} — ${chapters[chapter]}`;
 
 
-    storyText.textContent =
-        storyTexts[chapterIndex];
+    document.getElementById(
+        "rightChapter"
+    ).textContent =
+
+        `CAPÍTULO ${String(
+            chapter + 1
+        ).padStart(2,"0")}`;
 
 
-    const image =
+    document.getElementById(
+        "rightTitle"
+    ).textContent =
+
+        chapters[chapter];
+
+
+    story.textContent =
+
+        "Quatro meses após o acidente, " +
+        "a cidade já não era mais a mesma. " +
+        "Kai precisava descobrir a verdade " +
+        "sobre seus poderes.";
+
+
+    const imagePath =
         getPageImage(currentPage);
 
 
-    comicPage.src =
-        image;
-
-
     /*
-       Caso a imagem ainda não tenha sido colocada
-       na pasta /assets/hq/, utiliza a imagem
-       de referência.
+       Se existir uma imagem individual
+       da HQ, ela será mostrada.
+
+       Se ainda não existir,
+       usa a imagem de referência.
     */
 
-    comicPage.onerror = function(){
+    comicImage.onerror = function(){
 
         this.onerror = null;
 
         this.src =
-            "assets/velocity-spider-reference.png";
+            "assets/referencia.png";
 
     };
 
 
+    comicImage.src =
+        imagePath;
+
+
     const percentage =
+
         Math.round(
-            (currentPage / TOTAL_PAGES) * 100
+            currentPage /
+            TOTAL_PAGES *
+            100
         );
 
 
@@ -975,262 +1304,393 @@ function renderPage(){
         percentage + "%";
 
 
-    progressText.textContent =
+    percent.textContent =
         percentage + "%";
 
 
     document
-        .querySelectorAll(".page-number")
-        .forEach(button => {
+        .querySelectorAll(".page")
+        .forEach(
+            (button,index)=>{
 
-            button.classList.toggle(
-                "active",
-                Number(button.dataset.page) === currentPage
-            );
+                button.classList.toggle(
 
-        });
+                    "active",
+
+                    index + 1 ===
+                    currentPage
+
+                );
+
+            }
+        );
 
 
     document
         .querySelectorAll(".chapter")
-        .forEach((chapter,index) => {
+        .forEach(
+            (item,index)=>{
 
-            chapter.classList.toggle(
-                "active",
-                index === chapterIndex
-            );
+                item.classList.toggle(
 
-        });
+                    "active",
+
+                    index === chapter
+
+                );
+
+            }
+        );
 
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+    document
+        .querySelectorAll(".thumb")
+        .forEach(
+            (thumb,index)=>{
+
+                thumb.classList.toggle(
+
+                    "active",
+
+                    index + 1 ===
+                    currentPage
+
+                );
+
+            }
+        );
 
 }
 
 
-/* =====================================================
-   CRIAR 300 BOTÕES DE PÁGINA
-===================================================== */
+/* ==================================================
+   CAPÍTULOS
+================================================== */
 
-for(let i = 1; i <= TOTAL_PAGES; i++){
+
+const chapterList =
+    document.getElementById(
+        "chapterList"
+    );
+
+
+chapters.forEach(
+    (name,index)=>{
+
+        const item =
+            document.createElement(
+                "div"
+            );
+
+
+        item.className =
+            "chapter";
+
+
+        item.innerHTML = `
+
+            <img
+                src="assets/referencia.png"
+            >
+
+            <div>
+
+                <b>
+                    Capítulo
+                    ${String(
+                        index + 1
+                    ).padStart(2,"0")}
+                </b>
+
+                <br>
+
+                ${name}
+
+                <br>
+
+                <small>
+                    10 páginas
+                </small>
+
+            </div>
+
+        `;
+
+
+        item.onclick = ()=>{
+
+            currentPage =
+                index *
+                PAGES_PER_CHAPTER +
+                1;
+
+            render();
+
+        };
+
+
+        chapterList.appendChild(
+            item
+        );
+
+    }
+);
+
+
+
+/* ==================================================
+   300 PÁGINAS
+================================================== */
+
+
+const pageButtons =
+    document.getElementById(
+        "pageButtons"
+    );
+
+
+for(
+    let i = 1;
+    i <= TOTAL_PAGES;
+    i++
+){
 
     const button =
-        document.createElement("button");
+        document.createElement(
+            "button"
+        );
 
 
     button.className =
-        "page-number";
-
-
-    button.dataset.page =
-        i;
+        "page";
 
 
     button.textContent =
         i;
 
 
-    button.onclick = function(){
+    button.onclick = ()=>{
 
-        currentPage = i;
+        currentPage =
+            i;
 
-        renderPage();
+        render();
 
     };
 
 
-    pageGrid.appendChild(button);
+    pageButtons.appendChild(
+        button
+    );
 
 }
 
 
-/* =====================================================
-   CRIAR CAPÍTULOS
-===================================================== */
 
-chapters.forEach((chapter,index)=>{
-
-    const element =
-        document.createElement("div");
+/* ==================================================
+   MINIATURAS
+================================================== */
 
 
-    element.className =
-        "chapter";
+const thumbnails =
+    document.getElementById(
+        "thumbnails"
+    );
 
 
-    element.dataset.chapter =
-        index;
+for(
+    let i = 1;
+    i <= TOTAL_PAGES;
+    i++
+){
+
+    /*
+       Para não carregar 300 imagens
+       grandes ao mesmo tempo,
+       as miniaturas usam a imagem
+       de referência inicialmente.
+    */
+
+    const img =
+        document.createElement(
+            "img"
+        );
 
 
-    const firstPage =
-        index * PAGES_PER_CHAPTER + 1;
+    img.className =
+        "thumb";
 
 
-    const lastPage =
-        firstPage + PAGES_PER_CHAPTER - 1;
+    img.src =
+        "assets/referencia.png";
 
 
-    element.innerHTML = `
-
-        <b>
-            Capítulo ${String(index + 1).padStart(2,"0")}
-        </b>
-
-        <br>
-
-        ${chapter}
-
-        <br>
-
-        <small>
-            Páginas ${firstPage}–${lastPage}
-        </small>
-
-    `;
+    img.alt =
+        "Página " + i;
 
 
-    element.onclick = function(){
+    img.onclick = ()=>{
 
         currentPage =
-            firstPage;
+            i;
 
-        renderPage();
-
-    };
-
-
-    chaptersContainer.appendChild(element);
-
-});
-
-
-/* =====================================================
-   PESQUISA DE CAPÍTULOS
-===================================================== */
-
-document
-    .getElementById("chapterSearch")
-    .addEventListener("input",function(){
-
-        const search =
-            this.value.toLowerCase();
-
-
-        document
-            .querySelectorAll(".chapter")
-            .forEach(element=>{
-
-                element.style.display =
-                    element.textContent
-                        .toLowerCase()
-                        .includes(search)
-                        ? "block"
-                        : "none";
-
-            });
-
-    });
-
-
-/* =====================================================
-   BOTÕES
-===================================================== */
-
-document
-    .getElementById("previousButton")
-    .onclick = function(){
-
-        if(currentPage > 1){
-
-            currentPage--;
-
-            renderPage();
-
-        }
+        render();
 
     };
 
 
-document
-    .getElementById("nextButton")
-    .onclick = function(){
+    thumbnails.appendChild(
+        img
+    );
 
-        if(currentPage < TOTAL_PAGES){
-
-            currentPage++;
-
-            renderPage();
-
-        }
-
-    };
+}
 
 
-document
-    .getElementById("firstButton")
-    .onclick = function(){
 
-        currentPage = 1;
-
-        renderPage();
-
-    };
+/* ==================================================
+   NAVEGAÇÃO
+================================================== */
 
 
-document
-    .getElementById("lastButton")
-    .onclick = function(){
+document.getElementById(
+    "previous"
+).onclick = ()=>{
+
+    if(
+        currentPage > 1
+    ){
+
+        currentPage--;
+
+        render();
+
+    }
+
+};
+
+
+document.getElementById(
+    "next"
+).onclick = ()=>{
+
+    if(
+        currentPage < TOTAL_PAGES
+    ){
+
+        currentPage++;
+
+        render();
+
+    }
+
+};
+
+
+document.getElementById(
+    "first"
+).onclick = ()=>{
+
+    currentPage = 1;
+
+    render();
+
+};
+
+
+document.getElementById(
+    "last"
+).onclick = ()=>{
+
+    currentPage =
+        TOTAL_PAGES;
+
+    render();
+
+};
+
+
+document.getElementById(
+    "nextChapter"
+).onclick = ()=>{
+
+    const next =
+        Math.floor(
+            (currentPage - 1) /
+            10
+        ) + 1;
+
+    if(next < 30){
 
         currentPage =
-            TOTAL_PAGES;
+            next * 10 + 1;
 
-        renderPage();
+        render();
 
-    };
+    }
+
+};
 
 
-pageSlider.oninput =
+
+/* ==================================================
+   SLIDER
+================================================== */
+
+
+slider.oninput =
     function(){
 
         currentPage =
-            Number(this.value);
+            Number(
+                this.value
+            );
 
-        renderPage();
+        render();
 
     };
 
 
-/* =====================================================
+
+/* ==================================================
    TECLADO
-===================================================== */
+================================================== */
+
 
 document.addEventListener(
     "keydown",
     function(event){
 
-        if(event.key === "ArrowLeft"){
+        if(
+            event.key ===
+            "ArrowLeft"
+        ){
 
-            if(currentPage > 1){
+            if(
+                currentPage > 1
+            ){
 
                 currentPage--;
 
-                renderPage();
+                render();
 
             }
 
         }
 
 
-        if(event.key === "ArrowRight"){
+        if(
+            event.key ===
+            "ArrowRight"
+        ){
 
-            if(currentPage < TOTAL_PAGES){
+            if(
+                currentPage <
+                TOTAL_PAGES
+            ){
 
                 currentPage++;
 
-                renderPage();
+                render();
 
             }
 
@@ -1240,11 +1700,12 @@ document.addEventListener(
 );
 
 
-/* =====================================================
-   INICIAR
-===================================================== */
 
-renderPage();
+/* ==================================================
+   INICIAR
+================================================== */
+
+render();
 
 </script>
 
